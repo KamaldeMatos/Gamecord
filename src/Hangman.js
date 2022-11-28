@@ -27,8 +27,8 @@ module.exports = class Hangman extends events {
     if (!options.customWord) options.customWord = null;
     if (!options.timeoutTime) options.timeoutTime = 60000;
     if (!options.theme) options.theme = Object.keys(words)[Math.floor(Math.random() * Object.keys(words).length)];
-    if (!options.winMessage) options.winMessage = 'You won! The word was **{word}**.';
-    if (!options.loseMessage) options.loseMessage = 'You lost! The word was **{word}**.';
+    if (!options.winMessage) options.winMessage = 'Você ganhou! A palavra era **{word}**.';
+    if (!options.loseMessage) options.loseMessage = 'Você perdeu! A palavra era **{word}**.';
 
 
     if (typeof options.embed !== 'object') throw new TypeError('INVALID_EMBED: embed option must be an object.');
@@ -45,7 +45,7 @@ module.exports = class Hangman extends events {
     if (typeof options.loseMessage !== 'string') throw new TypeError('INVALID_MESSAGE: Lose Message option must be a string.');
     if (typeof options.theme !== 'string') throw new TypeError('INVALID_THEME: theme option must be a string.');
     if (options.playerOnlyMessage !== false) {
-      if (!options.playerOnlyMessage) options.playerOnlyMessage = 'Only {player} can use these buttons.';
+      if (!options.playerOnlyMessage) options.playerOnlyMessage = 'Apenas {player} pode usar esses botões.';
       if (typeof options.playerOnlyMessage !== 'string') throw new TypeError('INVALID_MESSAGE: playerOnly Message option must be a string.');
     }
 
@@ -96,7 +96,7 @@ module.exports = class Hangman extends events {
     .setTitle(this.options.embed.title)
     .setDescription(this.getBoardContent())
     .setAuthor({ name: this.message.author.tag, iconURL: this.message.author.displayAvatarURL({ dynamic: true }) })
-    .addFields({ name: `Word (${this.word.length})`, value: this.getWordEmojis() });
+    .addFields({ name: `Palavra com (${this.word.length}) letras`, value: this.getWordEmojis() });
 
     const msg = await this.sendMessage({ embeds: [embed], components: this.getComponents() });
     return this.handleButtons(msg);
@@ -129,8 +129,8 @@ module.exports = class Hangman extends events {
       .setTitle(this.options.embed.title)
       .setDescription(this.getBoardContent())
       .setAuthor({ name: this.message.author.tag, iconURL: this.message.author.displayAvatarURL({ dynamic: true }) })
-      .addFields({ name: 'Letters Guessed', value: '`'+ this.guessed.join(', ') +'`' })
-      .addFields({ name: `Word (${this.word.length})`, value: this.getWordEmojis() });
+      .addFields({ name: 'Letras utilizadas', value: '`'+ this.guessed.join(', ') +'`' })
+      .addFields({ name: `Palavra com (${this.word.length}) letras`, value: this.getWordEmojis() });
 
       return msg.edit({ embeds: [embed], components: this.getComponents() });
     })
@@ -153,7 +153,7 @@ module.exports = class Hangman extends events {
     .setDescription(this.getBoardContent())
     .setAuthor({ name: this.message.author.tag, iconURL: this.message.author.displayAvatarURL({ dynamic: true }) });
 
-    if (this.guessed.length) embed.addFields({ name: 'Letters Guessed', value: '`'+ this.guessed.join(', ') +'`' });
+    if (this.guessed.length) embed.addFields({ name: 'Letras utilizadas', value: '`'+ this.guessed.join(', ') +'`' });
     embed.addFields({ name: 'Game Over', value: GameOverMessage.replace('{word}', this.word) });
     return msg.edit({ embeds: [embed], components: [] });
   }
