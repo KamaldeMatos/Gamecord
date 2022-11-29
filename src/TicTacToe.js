@@ -23,7 +23,7 @@ module.exports = class TicTacToe extends approve {
     if (!options.emojis) options.emojis = {};
     if (!options.emojis.xButton) options.emojis.xButton = '❌';
     if (!options.emojis.oButton) options.emojis.oButton = '🔵';
-    if (!options.emojis.blankButton) options.emojis.blankButton = '➖';
+    if (!options.emojis.blankButton) options.emojis.blankButton = '\u200b';
 
     if (!options.timeoutTime) options.timeoutTime = 60000;
     if (!options.xButtonStyle) options.xButtonStyle = 'DANGER';
