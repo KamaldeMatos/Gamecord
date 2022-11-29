@@ -154,7 +154,7 @@ module.exports = class Hangman extends events {
     .setAuthor({ name: this.message.author.tag, iconURL: this.message.author.displayAvatarURL({ dynamic: true }) });
 
     if (this.guessed.length) embed.addFields({ name: 'Letras utilizadas', value: '`'+ this.guessed.join(', ') +'`' });
-    embed.addFields({ name: 'Game Over', value: GameOverMessage.replace('{word}', this.word) });
+    embed.addFields({ name: 'Fim de jogo!', value: GameOverMessage.replace('{word}', this.word) });
     return msg.edit({ embeds: [embed], components: [] });
   }
 
