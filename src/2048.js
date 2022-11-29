@@ -92,7 +92,8 @@ module.exports = class TwoZeroFourEight extends events {
     const left = new ButtonBuilder().setEmoji(this.options.emojis.left).setStyle(this.options.buttonStyle).setCustomId('2048_left');
     const right = new ButtonBuilder().setEmoji(this.options.emojis.right).setStyle(this.options.buttonStyle).setCustomId('2048_right');
     const blank = new ButtonBuilder().setLabel(`\u200b`).setStyle(2).setDisabled(true).setCustomId('2048_blank');
-    const row = new ActionRowBuilder().addComponents(blank, up, blank.setCustomId('2048_blank2'));
+    const blank2 = new ButtonBuilder().setLabel(`\u200b`).setStyle(2).setDisabled(true).setCustomId('2048_blank2');
+    const row = new ActionRowBuilder().addComponents(blank, up, blank2);
     const row2 = new ActionRowBuilder().addComponents(left, down, right);
 
 
