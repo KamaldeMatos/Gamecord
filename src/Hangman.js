@@ -14,7 +14,7 @@ module.exports = class Hangman extends events {
 
 
     if (!options.embed) options.embed = {};
-    if (!options.embed.title) options.embed.title = 'Hangman';
+    if (!options.embed.title) options.embed.title = 'Jogo da Forca';
     if (!options.embed.color) options.embed.color = '#5865F2';
 
     if (!options.hangman) options.hangman = {};
