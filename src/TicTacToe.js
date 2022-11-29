@@ -33,7 +33,7 @@ module.exports = class TicTacToe extends approve {
     if (!options.tieMessage) options.tieMessage = 'O jogo empatou! Ninguém ganhou o jogo!';
     if (!options.timeoutMessage) options.timeoutMessage = 'O jogo está inacabado! Ninguém ganhou o jogo!';
     if (!options.requestMessage) options.requestMessage = '{player} convidou você para um jogo de **Jogo da velha**.';
-    if (!options.rejectMessage) options.rejectMessage = 'The player denied your request for a round of **Tic Tac Toe**.';
+    if (!options.rejectMessage) options.rejectMessage = 'O jogador negou seu pedido de uma rodada de **Jogo da velha**.';
 
 
     if (typeof options.embed !== 'object') throw new TypeError('INVALID_EMBED: embed option must be an object.');
