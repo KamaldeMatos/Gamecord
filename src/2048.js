@@ -14,7 +14,7 @@ module.exports = class TwoZeroFourEight extends events {
 
 
     if (!options.embed) options.embed = {};
-    if (!options.embed.title) options.embed.title = '2048';
+    if (!options.embed.title) options.embed.title = '2048 Game';
     if (!options.embed.color) options.embed.color = '#5865F2';
 
     if (!options.emojis) options.emojis = {};
@@ -91,10 +91,13 @@ module.exports = class TwoZeroFourEight extends events {
     const down = new ButtonBuilder().setEmoji(this.options.emojis.down).setStyle(this.options.buttonStyle).setCustomId('2048_down');
     const left = new ButtonBuilder().setEmoji(this.options.emojis.left).setStyle(this.options.buttonStyle).setCustomId('2048_left');
     const right = new ButtonBuilder().setEmoji(this.options.emojis.right).setStyle(this.options.buttonStyle).setCustomId('2048_right');
-    const row = new ActionRowBuilder().addComponents(up, down, left, right);
+    const blank = new ButtonBuilder().setLabel(`\u200b`).setStyle('SECONDARY').setDisabled(true).setCustomId('2048_blank');
+    const row = new ActionRowBuilder().addComponents(blank, up, blank.setCustomId('2048_blank2'));
+    const row2 = new ActionRowBuilder().addComponents(left, down, right);
 
 
-    const msg = await this.sendMessage({ embeds: [embed], components: [row], files: [await this.getBoardImage()] });
+
+    const msg = await this.sendMessage({ embeds: [embed], components: [row, row2], files: [await this.getBoardImage()] });
     return this.handleButtons(msg);
   }
 
