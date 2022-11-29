@@ -38,7 +38,7 @@ module.exports = class TwoZeroFourEight extends events {
     if (typeof options.timeoutTime !== 'number') throw new TypeError('INVALID_TIME: Timeout time option must be a number.');
     if (typeof options.buttonStyle !== 'string') throw new TypeError('INVALID_BUTTON_STYLE: button style must be a string.');
     if (options.playerOnlyMessage !== false) {
-      if (!options.playerOnlyMessage) options.playerOnlyMessage = 'Only {player} can use these buttons.';
+      if (!options.playerOnlyMessage) options.playerOnlyMessage = 'Apenas {player} pode usar esses botões.';
       if (typeof options.playerOnlyMessage !== 'string') throw new TypeError('INVALID_MESSAGE: playerOnlyMessage option must be a string.');
     }
 
