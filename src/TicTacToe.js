@@ -30,9 +30,9 @@ module.exports = class TicTacToe extends approve {
     if (!options.oButtonStyle) options.oButtonStyle = 'PRIMARY';
     if (!options.turnMessage) options.turnMessage = '{emoji} | É a vez do jogador **{player}**.';
     if (!options.winMessage) options.winMessage = '{emoji} | **{player}** Venceu o jogo da velha.';
-    if (!options.tieMessage) options.tieMessage = 'The Game tied! No one won the Game!';
-    if (!options.timeoutMessage) options.timeoutMessage = 'The Game went unfinished! No one won the Game!';
-    if (!options.requestMessage) options.requestMessage = '{player} has invited you for a round of **Tic Tac Toe**.';
+    if (!options.tieMessage) options.tieMessage = 'O jogo empatou! Ninguém ganhou o jogo!';
+    if (!options.timeoutMessage) options.timeoutMessage = 'O jogo está inacabado! Ninguém ganhou o jogo!';
+    if (!options.requestMessage) options.requestMessage = '{player} convidou você para um jogo de **Jogo da velha**.';
     if (!options.rejectMessage) options.rejectMessage = 'The player denied your request for a round of **Tic Tac Toe**.';
 
 
@@ -182,9 +182,9 @@ module.exports = class TicTacToe extends approve {
 
 
   getButton(btn) {
-    if (btn === 1) return { emoji: this.options.emojis.xButton, style: 'SECONDARY' };
-    else if (btn === 2) return { emoji: this.options.emojis.oButton, style: 'SECONDARY'  };
-    else return { description: `\u200b`, style: 'SECONDARY' };
+    if (btn === 1) return { emoji: this.options.emojis.xButton, style: this.options.xButtonStyle };
+    else if (btn === 2) return { emoji: this.options.emojis.oButton, style: this.options.oButtonStyle };
+    else return { emoji: this.options.emojis.blankButton, style: 'SECONDARY' };
   }
 
 
