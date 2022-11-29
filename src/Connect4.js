@@ -26,12 +26,12 @@ module.exports = class Connect4 extends approve {
 
     if (!options.timeoutTime) options.timeoutTime = 60000;
     if (!options.buttonStyle) options.buttonStyle = 'PRIMARY';
-    if (!options.turnMessage) options.turnMessage = '{emoji} | Its turn of player **{player}**.';
-    if (!options.winMessage) options.winMessage = '{emoji} | **{player}** won the Connect4 Game.';
-    if (!options.tieMessage) options.tieMessage = 'The Game tied! No one won the Game!';
-    if (!options.timeoutMessage) options.timeoutMessage = 'The Game went unfinished! No one won the Game!';
-    if (!options.requestMessage) options.requestMessage = '{player} has invited you for a round of **Connect4**.';
-    if (!options.rejectMessage) options.rejectMessage = 'The player denied your request for a round of **Connect4**.';
+    if (!options.turnMessage) options.turnMessage = '{emoji} | É a vez do jogador **{player}**.';
+    if (!options.winMessage) options.winMessage = '{emoji} | **{player}** ganhou o jogo Connect4.';
+    if (!options.tieMessage) options.tieMessage = 'O Jogo empatou! Ninguém ganhou o jogo!';
+    if (!options.timeoutMessage) options.timeoutMessage = 'O jogo ficou inacabado! Ninguém ganhou o jogo!';
+    if (!options.requestMessage) options.requestMessage = '{player} convidou você para uma rodada de **Connect4**.';
+    if (!options.rejectMessage) options.rejectMessage = 'O jogador negou seu pedido para uma rodada de **Connect4**.';
 
 
     if (typeof options.embed !== 'object') throw new TypeError('INVALID_EMBED: embed option must be an object.');
@@ -49,7 +49,7 @@ module.exports = class Connect4 extends approve {
     if (typeof options.tieMessage !== 'string') throw new TypeError('INVALID_MESSAGE: Tie message must be a string.');
     if (typeof options.timeoutMessage !== 'string') throw new TypeError('INVALID_MESSAGE: Timeout message must be a string.');
     if (options.playerOnlyMessage !== false) {
-      if (!options.playerOnlyMessage) options.playerOnlyMessage = 'Only {player} and {opponent} can use these buttons.';
+      if (!options.playerOnlyMessage) options.playerOnlyMessage = 'Apenas {player} e {opponent} podem usar esses botões.';
       if (typeof options.playerOnlyMessage !== 'string') throw new TypeError('INVALID_MESSAGE: playerOnly Message option must be a string.');
     }
 

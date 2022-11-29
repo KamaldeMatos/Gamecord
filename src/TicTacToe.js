@@ -182,8 +182,8 @@ module.exports = class TicTacToe extends approve {
 
 
   getButton(btn) {
-    if (btn === 1) return { emoji: this.options.emojis.xButton, style: this.options.xButtonStyle };
-    else if (btn === 2) return { emoji: this.options.emojis.oButton, style: this.options.oButtonStyle  };
+    if (btn === 1) return { emoji: this.options.emojis.xButton, style: 'SECONDARY' };
+    else if (btn === 2) return { emoji: this.options.emojis.oButton, style: 'SECONDARY'  };
     else return { emoji: this.options.emojis.blankButton , style: 'SECONDARY' };
   }
 
