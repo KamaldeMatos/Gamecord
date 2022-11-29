@@ -94,7 +94,7 @@ module.exports = class Hangman extends events {
     const embed = new EmbedBuilder()
     .setColor(this.options.embed.color)
     .setTitle(this.options.embed.title)
-    .setDescription(`Dica: \`${options.theme}\`\n${this.getBoardContent()}`)
+    .setDescription(`Dica: \`${this.options.theme}\`\n${this.getBoardContent()}`)
     .setAuthor({ name: this.message.author.tag, iconURL: this.message.author.displayAvatarURL({ dynamic: true }) })
     .addFields({ name: `Palavra com (${this.word.length}) letras`, value: this.getWordEmojis() });
 
