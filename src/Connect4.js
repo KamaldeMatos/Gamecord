@@ -117,7 +117,7 @@ module.exports = class Connect4 extends approve {
     const row1 = new ActionRowBuilder().addComponents(btn1, btn2, btn3, btn4);
     const row2 = new ActionRowBuilder().addComponents(btn5, btn6, btn7);
 
-    await msg.edit({ embeds: [embed], components: [row1, row2] });
+    msg = await msg.edit({ embeds: [embed], components: [row1, row2] });
     return this.handleButtons(msg);
   }
 

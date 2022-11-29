@@ -53,7 +53,7 @@ module.exports = class TicTacToe extends approve {
     if (typeof options.timeoutMessage !== 'string') throw new TypeError('INVALID_MESSAGE: Win message option must be a string.');
     if (typeof options.timeoutTime !== 'number') throw new TypeError('INVALID_TIME: time option must be a number.');
     if (options.playerOnlyMessage !== false) {
-      if (!options.playerOnlyMessage) options.playerOnlyMessage = 'Only {player} and {opponent} can use these buttons.';
+      if (!options.playerOnlyMessage) options.playerOnlyMessage = 'Apenas {player} e {opponent} podem usar esses botões.';
       if (typeof options.playerOnlyMessage !== 'string') throw new TypeError('INVALID_MESSAGE: playerOnly Message option must be a string.');
     }
 
