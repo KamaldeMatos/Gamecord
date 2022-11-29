@@ -9,8 +9,8 @@ client.on('messageCreate', async (message) => {
       message: message,
       isSlashGame: false,
       embed: {
-        title: 'Snake Game',
-        overTitle: 'Game Over',
+        title: 'Jogo da Cobrinha',
+        overTitle: 'Fim de Jogo!',
         color: '#5865F2'
       },
       emojis: {
@@ -25,7 +25,7 @@ client.on('messageCreate', async (message) => {
       timeoutTime: 60000,
       snake: { head: '🟢', body: '🟩', tail: '🟢', over: '💀' },
       foods: ['🍎', '🍇', '🍊', '🫐', '🥕', '🥝', '🌽'],
-      playerOnlyMessage: 'Only {player} can use these buttons.'
+      playerOnlyMessage: 'Apenas {player} pode usar esses botões.'
     });
     
     Game.startGame();

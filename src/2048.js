@@ -38,8 +38,8 @@ module.exports = class TwoZeroFourEight extends events {
     if (typeof options.timeoutTime !== 'number') throw new TypeError('INVALID_TIME: Timeout time option must be a number.');
     if (typeof options.buttonStyle !== 'string') throw new TypeError('INVALID_BUTTON_STYLE: button style must be a string.');
     if (options.playerOnlyMessage !== false) {
-      if (!options.playerOnlyMessage) options.playerOnlyMessage = 'Apenas {player} pode usar esses botões.';
-      if (typeof options.playerOnlyMessage !== 'string') throw new TypeError('INVALID_MESSAGE: playerOnlyMessage option must be a string.');
+    if (!options.playerOnlyMessage) options.playerOnlyMessage = 'Apenas {player} pode usar esses botões.';
+    if (typeof options.playerOnlyMessage !== 'string') throw new TypeError('INVALID_MESSAGE: playerOnlyMessage option must be a string.');
     }
 
 
@@ -83,7 +83,7 @@ module.exports = class TwoZeroFourEight extends events {
     .setTitle(this.options.embed.title)
     .setColor(this.options.embed.color)
     .setImage('attachment://gameboard.png')
-    .addFields({ name: 'Current Score', value: this.score.toString() })
+    .addFields({ name: 'Pontuação atual:', value: this.score.toString() })
     .setFooter({ text: this.message.author.tag, iconURL: this.message.author.displayAvatarURL({ dynamic: true }) });
 
     this.options.buttonStyle = buttonStyle(this.options.buttonStyle);
@@ -138,7 +138,7 @@ module.exports = class TwoZeroFourEight extends events {
       .setTitle(this.options.embed.title)
       .setColor(this.options.embed.color)
       .setImage('attachment://gameboard.png')
-      .addFields({ name: 'Current Score', value: this.score.toString() })
+      .addFields({ name: 'Pontuação atual:', value: this.score.toString() })
       .setFooter({ text: this.message.author.tag, iconURL: this.message.author.displayAvatarURL({ dynamic: true }) });
 
       return msg.edit({ embeds: [embed], files: [await this.getBoardImage()], attachments: [] });
@@ -160,7 +160,7 @@ module.exports = class TwoZeroFourEight extends events {
     .setTitle(this.options.embed.title)
     .setColor(this.options.embed.color)
     .setImage('attachment://gameboard.png')
-    .addFields({ name: 'Total Score', value: this.score.toString() })
+    .addFields({ name: 'Pontuação total:', value: this.score.toString() })
     .setFooter({ text: this.message.author.tag, iconURL: this.message.author.displayAvatarURL({ dynamic: true }) });
 
     return msg.edit({ embeds: [embed], components: disableButtons(msg.components), files: [await this.getBoardImage()], attachments: [] });
