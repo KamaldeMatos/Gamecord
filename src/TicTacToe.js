@@ -15,15 +15,15 @@ module.exports = class TicTacToe extends approve {
 
 
     if (!options.embed) options.embed = {};
-    if (!options.embed.title) options.embed.title = 'Tic Tac Toe';
+    if (!options.embed.title) options.embed.title = 'Jogo da velha';
     if (!options.embed.statusTitle) options.embed.statusTitle = 'Status';
-    if (!options.embed.overTitle) options.embed.overTitle = 'Game Over';
+    if (!options.embed.overTitle) options.embed.overTitle = 'Fim do jogo!';
     if (!options.embed.color) options.embed.color = '#5865F2';
 
     if (!options.emojis) options.emojis = {};
     if (!options.emojis.xButton) options.emojis.xButton = '❌';
     if (!options.emojis.oButton) options.emojis.oButton = '🔵';
-    if (!options.emojis.blankButton) options.emojis.blankButton = '\u200b';
+    if (!options.emojis.blankButton) options.emojis.blankButton = '➖';
 
     if (!options.timeoutTime) options.timeoutTime = 60000;
     if (!options.xButtonStyle) options.xButtonStyle = 'DANGER';
@@ -184,7 +184,7 @@ module.exports = class TicTacToe extends approve {
   getButton(btn) {
     if (btn === 1) return { emoji: this.options.emojis.xButton, style: 'SECONDARY' };
     else if (btn === 2) return { emoji: this.options.emojis.oButton, style: 'SECONDARY'  };
-    else return { emoji: this.options.emojis.blankButton , style: 'SECONDARY' };
+    else return { description: `\u200b`, style: 'SECONDARY' };
   }
 
 
